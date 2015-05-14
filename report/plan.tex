@@ -1,0 +1,189 @@
+\documentclass[singleside,openright]{uva-bachelor-thesis}
+
+%\usepackage[dutch]{babel}  % uncomment if you write in dutch
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{csquotes}
+\usepackage[
+style=ieee,
+backend=biber
+]{biblatex}
+\addbibresource{cite.bib}
+
+\newenvironment{week}[3]{
+\newcommand{\topic}{\item}
+\vspace{2mm} %5mm vertical space
+\noindent
+\textbf{Week #1} from #2 to #3
+\begin{itemize}[nolistsep]
+}{
+\end{itemize}
+}
+
+
+% Title Page
+\title{Bachelor Thesis\\Project Plan}
+\author{Matthijs Bos}
+\supervisors{Toto van Inge (UvA), Taco Walstra (UvA)}
+\signedby{n.a.}
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\chapter{Context}
+%Een projectplan is een heldere uitwerking van de afstudeeropdracht en beschrijft het plan van aanpak van het hele afstudeerproject. Een projectplan beslaat gemiddeld twee tot vier A4tjes en bestaat uit drie delen: 
+
+%De context; beschrijf hier het onderdeel van het vakgebied waarbinnen dit onderzoek plaatsvindt. Uit dit deel moet duidelijk zijn hoe de onderzoeksvraag die hierna wordt beschreven is gepositioneerd binnen de informatica.
+
+Computer architecture and organization is considered an important subject in undergraduate information science curricula, such as computer engineering, compututer science and software engineering. It is the field of study where one acquires understanding of a computer's central processing unit (CPU). The subject's body of knowledge ranges from a low level understanding of a CPU's internal workings, design and surrounding systems to a more abstract view that considers a CPU from a software point of view \cite[p.60]{soldan2004computer}. Depending on the curriculum, computer architecture and organization courses are often succeeded by more advanced courses that focus on digital design and hardware description languages (HDL). These more advanced subjects are often taught in a later stage of the curriculum. 
+
+One often attempts to reinforce the theoretical understanding of computer architecture through a practical experience. Computer architecture simulators are a popular tool in facilitating this practical experience and many implementations exist, such as \cite{mariesim}. In this virtual approach however, students lack a physical view of computers \cite[p.1]{nativeFPGA}. The need for a more practical, hands-on experience is supported by \cite{digitalNatives}, which claims that traditional teaching methods are inappropriate for modern, 'digital native' students.
+
+Several computer architectures have been developed for the purpose of computer architecture education \cite{nativeFPGA, jansen2014every, 6211804, nakano2008processor, holland2003harnessing}. Although not especially designed for the purpose of education, other simple architectures could be leveraged for this purpose as well \cite{suresh2014fpga}.
+
+Field programmable gate arrays (FPGA) are a class of integrated circuits that are user configurable and can be used to implement a digital system's design in 'real' hardware. Designs are usually defined using a HDL such as Verilog HDL or VHDL and programmed on the device. For some time now, the costs and capabilities of these devices have reached a point such that they have become useful for educational purposes and have proven to be a successful tool in courses that teach students the subjects of digital design and HDLs. 
+
+Learning digital hardware design using FPGAs is highly dependent on HDLs. Learning HDLs however, is generally considered a challenging task. Students that already have experience with other programming languages such as C or Java have trouble adopting HDLs' parallel behaviour, since it differs a great deal from the behaviour in these imperative languages. Furthermore, the application of HDLs requires a certain level of knowledge on the subjects of digital systems and physical fundamentals of computers \cite[p.2]{nativeFPGA}. 
+
+Many solutions exist that translates 'traditional' code such as C (dialects) into a HDL format. It is unknown whether these technologies have been applied for the purpose of education. The level of abstraction that these technologies add on top of HDLs probably makes it unusable for computer architecture education.
+
+A number of educative methods have been developed that incorporate FPGAs as a tool to teach the concepts of computer architecture and organization \cite{nativeFPGA, jansen2014every, nakano2008processor, el2011teaching}. These methods however, all teach or assume some knowlegde on the subject of HDLs. These methods have a common approach in which students implement some (part of a) microarchitecture using HDLs and verify their work using an FPGA. The approach presented in \cite{holland2003harnessing} presents a method that utilizes FPGAs in an interactive way without using HDLs. 
+
+\chapter{Research}
+%De onderzoeksvraag; beschrijf het probleem waaraan zal worden gewerkt. Vaak heeft dit de vorm van een reflectie ten opzichte van “the state-of-the-art”: een opsomming van resultaten die eerder door anderen zijn behaald gevolgd door een probleemstelling die daarop voortbouwt. Als onderdeel van de onderzoeksvraag wordt tevens beschreven wat het project gaat opleveren: het product dat aan het eind zal worden opgeleverd, bv. de resultaten van een onderzoek, de sourcecode van ontwikkelde software, documentatie.
+
+\section{Problem description}
+At the University of Amsterdam (UvA), the computer architecture and organization course is taught as part of  the computer science bachelor program. The course is traditionally scheduled at the start of a bachelor student's curriculum. The UvA course's contents are based on the widely adopted works of Hennessy and Patterson \cite{hennessyPatterson}. The book's theory is supported by a series of experiments, making use of the SIM-PL \cite{simpl} simulation environment. A number of architectures from \cite{hennessyPatterson} have been implemented in the SIM-PL environment, allowing students to interact with these architectures in a virtual environment. 
+
+In the process of modernizing computer architecture and organization course, the instructors sense the need for a more hands-on experience, where students are able to interact with physical devices. Due to the time available, the course's scope is limited to computer architectures and does not involve learning HDL programming or more advanced digital design topics. FPGAs have proven to be effective in education of these more advanced topics, but have seen little application in teaching the basics of computer architecture and organization. 
+
+A problem arises when applying FPGAs in introductory computer architecture and organization courses. Students unfamiliar with HDL programming and digital systems are incapable of using FPGAs in experiments due to their technical difficulties. As such, the need arises for a solution that enables students unfamiliar with the subjects of HDL programming to be able to use FPGAs in their experiments. 
+
+\section{Research goals}
+The goal of this research is to create an educational platform in which students are capable of performing  experiments with live computer architectures running on an FPGA without prior technical knowledge about these FPGA's or HDL programming. During this research, the Digilent Nexys-4 development board will be used. This board is based around the latest Xilinx Artix-7 FPGA. 
+
+\begin{itemize}
+\item Students must be able to easily load a microarchitecture on a FPGA connected to their PC.
+\item Students must be able to write their own programs in assembly code and run these on the loaded microarchitecture.
+\item Students must be able to debug their programs from their PC by setting breakpoints in the code and manually stepping through their code. Optionally being able to control the clock speed.
+\item The platform must at least be capable of hosting the architectures as described in the book by Hennessy and Patterson \cite{hennessyPatterson}.
+\item Students must be able to probe important signals within the hosted microarchitecture, either through fpga pins or through the pc connection.
+\end{itemize}
+
+
+The research does NOT aim to achieve the following:
+\begin{itemize}
+\item Developing new computer architectures for the purpose of education. Instead, existing architectures (implementations) are adapted to the platform.
+\item Measuring the effectiveness of applying FPGAs in copmuter architecture and organization education. This research does not aim to answer any didactic research questions, but provides a technical solution.
+\end{itemize}
+
+\section{Research question}
+
+Based on the given given problem and goals, the thesis' research question can be formulated as follows:
+
+\begin{displayquote}
+How can FPGAs be applied in computer architecture and organization experiments while hiding their technical complexities and removing the need for HDL programming skills?
+\end{displayquote}
+
+
+
+\chapter{Planning}
+%De planning; beschrijf hoe de beschikbare tijd naar verwachting zal worden besteed. Het is vaak lastig om vooraf alle activiteiten te identificeren die nodig zijn om het project succesvol te laten landen, laat staan om daarvan op de dag nauwkeurig aan te geven wat op welke datum af zal zijn. Over het algemeen is het wel mogelijk een aantal fasen (bv. literatuuronderzoek, ontwerp, implementatie, experimenten, scriptie schrijven, etc.) te identificeren en daarover een planning op weekbasis te maken.
+
+\section{Planning overview}
+\begin{week}{10-13}{2-3-2015}{29-3-2015}
+\topic Orientation
+\end{week}
+\begin{week}{14-15}{30-3-2015}{12-4-2015}
+\topic Investigation
+\topic Hypothesis
+\end{week}
+\begin{week}{16-18}{13-4-2015}{3-5-2015}
+\topic Three weeks of implementation. 
+\topic Aim to have a proof of concept by beginning of May. 
+\end{week}
+\begin{week}{19-22}{4-5-2015}{31-5-2015}
+\topic Four weeks of implementation. 
+\topic Finalization of results by the end of May.
+\end{week}
+\begin{week}{23-25}{1-6-2015}{21-6-2015}
+\topic Thesis writing and submission
+\end{week}
+\begin{week}{26-27}{22-6-2015}{5-7-2015}
+\topic Presentation
+\end{week}
+
+
+\section{Planning details}
+
+\begin{week}{13}{23-3-2015}{29-3-2015}
+\topic Assessment of thesis topic.
+\topic Establishment and evaluation of project plan.
+\end{week}
+\begin{week}{14}{30-3-2015}{5-4-2015}
+\topic Project plan submission deadline on monday 30-3-2015 23:59.
+\topic Start of project.
+\topic Literature research.
+\end{week}
+\begin{week}{15}{6-4-2015}{12-4-2015}
+\topic Tweede paasdag op 6-4
+\topic Literature research.
+\topic HDL programming practice.
+\topic System architecture proposal (hypothesis).
+\topic Risk identification.
+\end{week}
+\newpage
+\begin{week}{16}{13-4-2015}{19-4-2015}
+\topic System architecture refinement.
+\topic Implementation
+\end{week}
+\begin{week}{17}{20-4-2015}{26-4-2015}
+\topic Implementation
+\topic Submission of thesis table of contents in week 17. Specific date and time unknown.
+\end{week}
+\begin{week}{18}{27-4-2015}{3-5-2015}
+\topic Koningsdag op 27-4
+\topic Implementation 
+\topic Progress presentation and evaluation. Aim to have a first proof of concept by the beginning of May.
+\end{week}
+\begin{week}{19}{4-5-2015}{10-5-2015}
+\topic Implementation
+\end{week}
+\begin{week}{20}{11-5-2015}{17-5-2015}
+\topic Implementation
+\topic Hemelvaart op 14-5
+\end{week}
+\begin{week}{21}{18-5-2015}{24-5-2015}
+\topic Implementation
+\end{week}
+\begin{week}{22}{25-5-2015}{31-5-2015}
+\topic Tweede pinksterdag op 25-5
+\topic Finalizing implementation by end of May.
+\end{week}
+\begin{week}{23}{1-6-2015}{7-6-2015}
+\topic Thesis writing.
+\topic Evaluation of results.
+\end{week}
+\begin{week}{24}{8-6-2015}{14-6-2015}
+\topic Finishing thesis.
+\end{week}
+\begin{week}{25}{15-6-2015}{21-6-2015}
+\topic Thesis submission deadline on 17-6-2015 23:59.
+\topic Examination board thesis review period.
+\end{week}
+\begin{week}{26}{22-6-2015}{28-6-2015}
+\topic Presentation preparation.
+\topic Examination board thesis review period.
+\end{week}
+\begin{week}{27}{29-6-2015}{5-7-2015}
+\topic Presentations on 2-7-2015 11:00-17:00 and 3-7-2015 11:00-17:00.
+\end{week}
+
+\printbibliography
+
+\end{document}
