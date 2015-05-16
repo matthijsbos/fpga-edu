@@ -38,7 +38,13 @@ entity main is
         uart_rx: in std_logic;
         uart_tx: out std_logic;
         sw: in std_logic_vector(15 downto 0);
-        led: out std_logic_vector(15 downto 0)    
+        led: out std_logic_vector(15 downto 0);
+        seg: out std_logic_vector(6 downto 0);
+        btnu: in std_logic;
+        btnd: in std_logic;
+        btnl: in std_logic;
+        btnr: in std_logic;
+        btnc: in std_logic
     );
 end main;
 
