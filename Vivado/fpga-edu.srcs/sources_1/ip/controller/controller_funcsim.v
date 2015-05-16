@@ -1,10 +1,10 @@
 // Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2015.1 (win64) Build 1215546 Mon Apr 27 19:22:08 MDT 2015
-// Date        : Sat May 16 22:09:01 2015
+// Date        : Sat May 16 23:01:08 2015
 // Host        : Thinkpad-Twist running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/Matthijs/Dropbox/Informatica/Afstuderen/fpga-edu/Vivado/fpga-edu.srcs/sources_1/ip/controller/controller_funcsim.v
+//               C:/Users/Matthijs/Dropbox/Informatica/Afstuderen/fpga-edu/Vivado/fpga-edu.srcs/sources_1/ip/controller/controller_funcsim.v
 // Design      : controller
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
