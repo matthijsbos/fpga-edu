@@ -8,4 +8,5 @@ My computer science bachelor thesis project repository.
 - Xilinx SDK 2015.1
 
 ## Installation ##
-TODO
+- See `Vivado\README.md` for Xilinx Vivado installation instructions.
+- See `SDK\README.md` for Xilinx SDK installation instructions.
