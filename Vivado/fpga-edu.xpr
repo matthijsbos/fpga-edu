@@ -56,6 +56,7 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+      <Filter Type="Srcs"/>
       <File Path="$PPRDIR/../SDK/controller_application/Debug/controller_application.elf">
         <FileInfo>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -80,66 +81,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller.xml"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="doc/microblaze_mcs_v2_3_changelog.txt"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller_board.xdc"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="mdm_v3_2/pcores/mdm_v3_2/hdl/vhdl/arbiter.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="sim/controller.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="microblaze_mcs_v2_3/hdl/microblaze_mcs.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="microblaze_mcs_v2_3/hdl/lmb2axi.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="microblaze_mcs_v2_3/hdl/lmb_bram.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="microblaze_mcs_v2_3/hdl/ram_module_top.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="mdm_v3_2/pcores/mdm_v3_2/hdl/vhdl/mdm.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="mdm_v3_2/pcores/mdm_v3_2/hdl/vhdl/jtag_control.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="mdm_v3_2/pcores/mdm_v3_2/hdl/vhdl/srl_fifo.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="mdm_v3_2/pcores/mdm_v3_2/hdl/vhdl/mdm_primitives.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="axi_lite_ipif_v3_0/pcores/axi_lite_ipif_v3_0/hdl/vhdl/axi_lite_ipif.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="axi_lite_ipif_v3_0/pcores/axi_lite_ipif_v3_0/hdl/vhdl/slave_attachment.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="axi_lite_ipif_v3_0/pcores/axi_lite_ipif_v3_0/hdl/vhdl/address_decoder.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="axi_lite_ipif_v3_0/pcores/axi_lite_ipif_v3_0/hdl/vhdl/pselect_f.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="axi_lite_ipif_v3_0/pcores/axi_lite_ipif_v3_0/hdl/vhdl/ipif_pkg.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_v10_v3_0/pcores/lmb_v10_v3_0/hdl/vhdl/lmb_v10.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/lmb_mux.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/axi_interface.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="mdm_v3_2/pcores/mdm_v3_2/hdl/vhdl/mdm_core.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="mdm_v3_2/pcores/mdm_v3_2/hdl/vhdl/bus_master.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/lmb_bram_if_cntlr.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/pselect.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/pselect_mask.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller_stub.v"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller_stub.vhdl"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller_funcsim.vhdl"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller_funcsim.v"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller.dcp"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller.vho"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller.xdc"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="synth/controller.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/iomodule.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/gpo_module.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/pselect_mask.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller.bmm"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="microblaze_v9_5/hdl/microblaze_v9_5_vh_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="data/mb_bootloop_le.elf"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/correct_one_bit.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/checkbit_handler.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/parityenable.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/parity.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/xor18.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/lmb_bram_if_primitives.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="lmb_bram_if_cntlr_v4_0/pcores/lmb_bram_if_cntlr_v4_0/hdl/vhdl/lmb_bram_if_funcs.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/uart_transmit.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/uart_receive.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/uart_control_status.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/pit_module.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/intr_ctrl.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/iomodule_core.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/gpi_module.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/fit_module.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/divide_part.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="iomodule_v3_0/pcores/iomodule_v3_0/hdl/vhdl/xilinx_primitives.vhd"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="mb_bootloop_le.elf"/>
-        <CompFileExtendedInfo CompFileName="controller.xci" FileRelPathName="controller_sdk.xml"/>
       </File>
       <Config>
         <Option Name="TopModule" Val="controller"/>
@@ -174,27 +115,21 @@
   <Runs Version="1" Minor="9">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-1" ConstrsSet="constr-nexys-4" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="controller_synth_1" Type="Ft3:Synth" SrcSet="controller" Part="xc7a100tcsg324-1" ConstrsSet="controller" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/controller_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constr-nexys-4" Description="Vivado Implementation Defaults" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015">
-          <Desc>Vivado Implementation Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -209,9 +144,7 @@
     </Run>
     <Run Id="controller_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="controller" Description="Vivado Implementation Defaults" SynthRun="controller_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015">
-          <Desc>Vivado Implementation Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

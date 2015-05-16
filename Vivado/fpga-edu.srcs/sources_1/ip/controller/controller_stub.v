@@ -1,7 +1,7 @@
 // Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2015.1 (win64) Build 1215546 Mon Apr 27 19:22:08 MDT 2015
-// Date        : Sat May 16 23:01:08 2015
+// Date        : Sat May 16 23:14:01 2015
 // Host        : Thinkpad-Twist running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               C:/Users/Matthijs/Dropbox/Informatica/Afstuderen/fpga-edu/Vivado/fpga-edu.srcs/sources_1/ip/controller/controller_stub.v
