@@ -31,8 +31,7 @@ ENTITY mips_sc IS
 		Jump_out : OUT STD_LOGIC;
 		MemWrite_out : OUT STD_LOGIC;
 		RegWrite_out : OUT STD_LOGIC;
-		Clock, Reset : IN STD_LOGIC;
-		led: out std_logic_vector(7 downto 0)
+		Clock, Reset : IN STD_LOGIC
 	);
 	--Signals used for UP2 Board Implemntation
 	--All signals here must be assigned to a pin on
@@ -125,27 +124,7 @@ ARCHITECTURE structure of mips_sc IS
 			Clock, Reset : IN STD_LOGIC
 		);
 	END COMPONENT;
-	--COMPONENT sevenseg_display IS
-	-- PORT( Digit1 : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
-	-- Digit2 : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
-	-- D1seg_a : OUT STD_LOGIC;
-	-- D1seg_b : OUT STD_LOGIC;
-	-- D1seg_c : OUT STD_LOGIC;
-	-- D1seg_d : OUT STD_LOGIC;
-	-- D1seg_e : OUT STD_LOGIC;
-	-- D1seg_f : OUT STD_LOGIC;
-	-- D1seg_g : OUT STD_LOGIC;
-	-- D1pb : OUT STD_LOGIC;
-	-- D2seg_a : OUT STD_LOGIC;
-	-- D2seg_b : OUT STD_LOGIC;
-	-- D2seg_c : OUT STD_LOGIC;
-	-- D2seg_d : OUT STD_LOGIC;
-	-- D2seg_e : OUT STD_LOGIC;
-	-- D2seg_f : OUT STD_LOGIC;
-	-- D2seg_g : OUT STD_LOGIC;
-	-- D2pb : OUT STD_LOGIC;
-	-- Clock, Reset : IN STD_LOGIC);
-	--END COMPONENT;
+
 	--Signals used to connect VHDL Components
 	SIGNAL Add_Result : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	SIGNAL ALU_Result : STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -273,28 +252,5 @@ BEGIN
 		Clock => Clock,
 		Reset => Reset 
 	);
-	
-	led <= pc_out;
-	
-	-- SSD: sevenseg_display PORT MAP(
-	-- Digit1 => PC_Out (7 DOWNTO 4),
-	-- Digit2 => PC_Out (3 DOWNTO 0),
-	-- D1seg_a => D1_a,
-	-- D1seg_b => D1_b,
-	-- D1seg_c => D1_c,
-	-- D1seg_d => D1_d,
-	-- D1seg_e => D1_e,
-	-- D1seg_f => D1_f,
-	-- D1seg_g => D1_g,
-	-- D1pb => D1_pb,
-	-- D2seg_a => D2_a,
-	-- D2seg_b => D2_b,
-	-- D2seg_c => D2_c,
-	-- D2seg_d => D2_d,
-	-- D2seg_e => D2_e,
-	-- D2seg_f => D2_f,
-	-- D2seg_g => D2_g,
-	-- D2pb => D2_pb,
-	-- Clock => NClock,
-	-- Reset => Reset);
+
 END structure;

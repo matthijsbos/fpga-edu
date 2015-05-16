@@ -53,6 +53,7 @@ architecture Behavioral of main is
 signal output: std_logic_vector(31 downto 0);
 signal input: std_logic_vector(31 downto 0);
 signal reset_inv: std_logic;
+signal pc: std_logic_vector(7 downto 0);
 
 COMPONENT controller
   PORT (
@@ -82,7 +83,15 @@ begin
         GPI1_Interrupt => open,
         INTC_IRQ => open
       );
-    led <= output(15 downto 0);
+      
+    mips_sc_inst: entity work.mips_sc(structure) port map(
+        clock => clk,
+        reset => reset_inv,
+        pc => pc
+    );
+      
+    led(7 downto 0) <= pc;
+    led(15 downto 8) <= (others => '0');
     input(15 downto 0) <= sw;
     input(31 downto 16) <= (others => '0');
     reset_inv <= not reset;
